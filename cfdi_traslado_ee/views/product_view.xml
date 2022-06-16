@@ -10,7 +10,7 @@
                    <page string="Carta Porte" name="datos_sat_cp">
                         <group cols="4">
                              <group>
-                                <field name="clave_stcc" />
+                                <field name="clavestcc" />
                                 <field name="materialpeligroso" />
                                 <field name="clavematpeligroso" attrs="{'invisible':[('materialpeligroso','!=','Sí')]}"/>
                              </group>
