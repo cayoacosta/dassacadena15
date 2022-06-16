@@ -32,7 +32,7 @@
         </field>
     </record>
 
-    <record id="view_ordenes_de_reparacion_form" model="ir.ui.view">
+    <record id="view_ordenes_de_reparacion_form_new" model="ir.ui.view">
         <field name="name">ordenes.de.reparacion.form</field>
         <field name="model">ordenes.de.reparacion</field>
         <field name="arch" type="xml">
