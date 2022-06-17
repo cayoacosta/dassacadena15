@@ -12,13 +12,13 @@ class AccountInvoice(models.Model):
 
     # Columns Section
     margin = fields.Float(
-        'Margin', compute='_compute_margin', store=True, multi='margin',
+        'Margin', compute='_compute_margin', store=True,
         digits_compute=dp.get_precision('Product Price'),
         help="It gives profitability by calculating the difference between"
         " the Unit Price and the cost price.")
 
     margin_percent = fields.Float(
-        'Margin (%)', compute='_compute_margin', store=True, multi='margin',
+        'Margin (%)', compute='_compute_margin', store=True,
         digits_compute=dp.get_precision('PoS Order Margin Percent'))
 
     # Compute Section

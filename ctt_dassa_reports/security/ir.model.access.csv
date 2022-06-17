@@ -10,4 +10,3 @@ access_report_ventas_departamento_lines,access.report.ventas_departamento_lines,
 access_report_ventas_departamento_verificator_lines,access.report.ventas_departamento_verificator_lines,model_report_ventas_departamento_verificator_lines,,1,1,1,1
 access_report_exist_ventas,access.report.exist_ventas,model_report_exist_ventas,,1,1,1,1
 access_report_report_exist_ventas_lines,access.report.exist_ventas_lines,model_report_exist_ventas_lines,,1,1,1,1
-access_x_marcas,access.x_marcas,model_x_marcas,,1,1,1,1

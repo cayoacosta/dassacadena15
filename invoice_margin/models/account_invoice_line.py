@@ -13,12 +13,10 @@ class AccountInvoiceLine(models.Model):
     # Columns Section
     margin = fields.Float(
         'Margin', compute='_compute_multi_margin', store=True,
-        multi='multi_margin',
         digits_compute=dp.get_precision('Product Price'))
 
     margin_percent = fields.Float(
         'Margin (%)', compute='_compute_multi_margin', store=True,
-        multi='multi_margin',
         readonly=False,
         digits_compute=dp.get_precision('Product Price'))
 
