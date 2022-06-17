@@ -1,7 +1,7 @@
 {'name': 'Ubicacion de Productos',
  'description': 'Modelo para guardar ubicaciones de productos ',
  'author': 'Jonatan Rodriguez',
- 'depends': ['base', 'stock', 'sale_management', 'account','taller','sale_margin_security'],
+ 'depends': ['base', 'stock', 'sale_management', 'account','taller','sale_margin_security' ],
  'data': [
     'security/ubicacion_security.xml',
     'security/ir.model.access.csv',
