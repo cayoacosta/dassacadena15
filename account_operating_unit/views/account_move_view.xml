@@ -45,7 +45,7 @@
                     groups="operating_unit.group_multi_operating_unit"
                 />
             </field>
-            <filter name="group_by_account" position="after">
+            <!--<filter name="group_by_account" position="after">
                 <filter
                     string="Operating Unit"
                     name="operating_unit_grouped"
@@ -53,7 +53,7 @@
                     context="{'group_by':'operating_unit_id'}"
                     groups="operating_unit.group_multi_operating_unit"
                 />
-            </filter>
+            </filter>-->
         </field>
     </record>
     <record id="view_move_form" model="ir.ui.view">
