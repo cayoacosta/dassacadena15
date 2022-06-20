@@ -34,7 +34,7 @@ class SaleOrder(models.Model):
             journal = self.env['account.journal'].search([('type','=','sale'),('tipo','=',self.tipo),('operating_unit_id','=',self.operating_unit_id.id)],limit=1)
             if journal:
                 #self.journal_id_sales = journal.id
-                self.default_credit_account_id = journal.default_credit_account_id.id
+                self.default_credit_account_id = journal.defaul_account_id.id
 
                 
     @api.model

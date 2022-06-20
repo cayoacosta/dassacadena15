@@ -190,8 +190,7 @@ class OrdenesDeReparacion(models.Model):
                                           help="Delivery address for current sales order.")
     fiscal_position_id = fields.Many2one('account.fiscal.position', oldname='fiscal_position', string='Fiscal Position')
     partner_has_credit = fields.Boolean(related='partner_id.active_limit')
-
-    # default_credit_account_id = fields.Many2one(related='journal_id_sales.default_credit_account_id',string='Cuenta de Taller')
+    default_credit_account_id = fields.Many2one(related='journal_id_sales.default_account_id',string='Cuenta de Taller')
 
     # Dominos Terminos de pagos y lista de precios
     @api.onchange('partner_id')
@@ -235,7 +234,7 @@ class OrdenesDeReparacion(models.Model):
                                                          limit=1)
             if journal:
                 self.journal_id_sales = journal.id
-                self.default_credit_account_id = journal.default_credit_account_id.id
+                self.default_credit_account_id = journal.defaul_account_id.id
 
     @api.depends('refacciones_ids.margin')
     def _product_margin(self):
@@ -672,8 +671,8 @@ class OrdenesDeReparacion(models.Model):
             'partner_id': self.partner_id.id,
             'date': self.fecha,
             'origin': self.name,
-            'pricelist_id': self.pricelist_id.id,
-            'payment_term_id': self.payment_term_id.id,
+           # 'pricelist_id': self.pricelist_id.id,
+           # 'payment_term_id': self.payment_term_id.id,
             'location_dest_id': picking and picking[
                 0].location_id.id or self.warehouse_id.int_type_id.default_location_src_id.id,
             # self._get_destination_location(),

@@ -11,3 +11,6 @@ access_model_mano_de_obra_wizard,access.mano.de.obra.wizard.model,model_mano_de_
 access_model_modificar_refacciones_wizard,access.modificar.refacciones.wizard.model,model_modificar_refacciones_wizard,base.group_user,1,1,1,1
 access_model_modificar_otros_talleres_wizard,access.modificar.otros.talleres.wizard.model,model_modificar_otros_talleres_wizard,base.group_user,1,1,1,1
 access_model_cancelar_otros_talleres_wizard,access.cancelar.otros.talleres.wizard.model,model_cancelar_otros_talleres_wizard,base.group_user,1,1,1,1
+access_model_mano_de_obra_wizard_line,access.mano.de.obra.wizard.line,model_mano_de_obra_wizard_line,base.group_user,1,1,1,1
+access_model_modificar_otros_talleres_line,access.modificar.otros.talleres.wizard.line,model_modificar_otros_talleres_wizard_line,base.group_user,1,1,1,1
+access_model_cancelar_otros_talleres_line,access.cancelar.otros.talleres.wizard.line,model_cancelar_otros_talleres_wizard_line,base.group_user,1,1,1,1
