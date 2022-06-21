@@ -234,7 +234,7 @@ class OrdenesDeReparacion(models.Model):
                                                          limit=1)
             if journal:
                 self.journal_id_sales = journal.id
-                self.default_credit_account_id = journal.defaul_account_id.id
+                self.default_credit_account_id = journal.default_account_id.id
 
     @api.depends('refacciones_ids.margin')
     def _product_margin(self):
