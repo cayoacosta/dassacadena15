@@ -105,8 +105,8 @@ class SaleOrderLine(models.Model):
         return res
 
     
-    def _prepare_invoice_line(self, qty):
-        res = super(SaleOrderLine, self)._prepare_invoice_line(qty)
+    def _prepare_invoice_line(self, **kwargs):
+        res = super(SaleOrderLine, self)._prepare_invoice_line(**kwargs)
         for line in self:
             if line.default_credit_account_id:
                 res.update({'account_id': self.default_credit_account_id.id})
