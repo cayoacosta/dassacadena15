@@ -66,13 +66,14 @@ class AccountInvoiceLine(models.Model):
     # Overload Section. Necessary for lines created by other way than UI
     # Could be remove in the version of Odoo that removed product_id_change
     # function
-    @api.model
-    def create(self, vals):
-        if not vals.get('purchase_price', False):
-            product_obj = self.env['product.product']
-            product = product_obj.browse(vals.get('product_id'))
-            vals['purchase_price'] = product.standard_price
-        return super(AccountInvoiceLine, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals.get('purchase_price', False):
+                product_obj = self.env['product.product']
+                product = product_obj.browse(vals.get('product_id'))
+                vals['purchase_price'] = product.standard_price
+        return super(AccountInvoiceLine, self).create(vals_list)
 
     @api.onchange('margin_percent')
     def _onchange_markup_per(self):
