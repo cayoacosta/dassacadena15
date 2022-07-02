@@ -26,7 +26,7 @@ class ManoDeObraWizard(models.TransientModel):
              'mecanico_id': line.mecanico_id.id, 'detalle': line.detalle,
              'product_uom_qty' : line.product_uom_qty, 'price_unit': line.price_unit, 
              'tax_id': [(6,0,line.tax_id.ids)],
-             'mano_de_obra_line_id': line.id,
+            # 'reparacion_id' : self.reparacion_id.id,
              'comision': line.comision,
              'monto': line.monto,
              'product_uom' : line.product_id.uom_id.id,

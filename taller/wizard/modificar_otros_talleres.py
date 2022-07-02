@@ -139,7 +139,7 @@ class ModificarOtrosTalleresWizardLine(models.TransientModel):
     wizard_id = fields.Many2one("modificar.otros.talleres.wizard",'Wizard')
     product_id = fields.Many2one("product.product",'Producto', domain=[('tipo_de_venta','=','taller'),('mano_de_obra','=', False)])
     name = fields.Text(string='Descripción', required=True)
-    proveedor_id = fields.Many2one("res.partner",'Proveedor',domain=[('supplier','=',True)], required=True)
+    proveedor_id = fields.Many2one("res.partner",'Proveedor', required=True)
     product_uom_qty = fields.Float(string='Cantidad', digits=dp.get_precision('Product Unit of Measure'), required=True, default=1.0)
     product_uom = fields.Many2one('uom.uom', string='Unit of Measure')
     price_unit = fields.Float('Precio unitario', compute='_compute_price_unit_pct', required=True, digits=dp.get_precision('Product Price'), default=0.0, store=True, readonly=False)
