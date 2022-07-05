@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models
+from odoo import fields,models,api
 
 class report_account_aged_receivable(models.AbstractModel):
     _inherit = "account.aged.receivable"
+    
     filter_operating_units = True
+
     
     def _build_options(self, previous_options=None):
         options = super(report_account_aged_receivable, self)._build_options(previous_options=previous_options)
@@ -27,8 +29,22 @@ class report_account_aged_receivable(models.AbstractModel):
         return operating_units
     
     
+    @api.model
+    def _get_options(self, previous_options=None):
+        options = super(report_account_aged_receivable, self)._get_options(previous_options)
+        if options.get('operating_units'):
+            filter_operating_units = True
+            options['operating_units'] = self._get_operating_units()
+            if previous_options and 'operating_units' in previous_options  and options['operating_units'] and previous_options['operating_units'] is not None:
+                options['operating_units'] = previous_options['operating_units']
+        else:
+            filter_operating_units = False
+        return options
+    
+    
 class report_account_aged_payable(models.AbstractModel):
     _inherit = "account.aged.payable"
+    
     filter_operating_units = True
     
     def _build_options(self, previous_options=None):
@@ -50,5 +66,18 @@ class report_account_aged_payable(models.AbstractModel):
                 previous_company = c.company_id
             operating_units.append({'id': c.id, 'name': c.name, 'code': c.code, 'selected': False})
         return operating_units
+    
+
+    @api.model
+    def _get_options(self, previous_options=None):
+        options = super(report_account_aged_payable, self)._get_options(previous_options)
+        if options.get('operating_units'):
+            filter_operating_units = True
+            options['operating_units'] = self._get_operating_units()
+            if previous_options and 'operating_units' in previous_options  and options['operating_units'] and previous_options['operating_units'] is not None:
+                options['operating_units'] = previous_options['operating_units']
+        else:
+            filter_operating_units = False
+        return options
 
     
